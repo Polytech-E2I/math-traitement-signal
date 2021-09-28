@@ -5,9 +5,7 @@ T1 = 8
 T2 = 2
 
 n = 1000
-xmin = -200
-xmax = -xmin
-t = np.linspace(xmin, xmax, n)
+t = np.linspace(-100, 100, n)
 T = t[1] - t[0] # sampling width
 
 rect1 = np.where(np.logical_and(t >= -T1/2, t <= T1/2), 1, 0)
@@ -33,4 +31,5 @@ axis.grid(True)
 axis.set_xlabel("t")
 fig.suptitle("Convolution de $f_1$ et $f_2$", fontweight="bold")
 fig.canvas.draw()
+plt.xlim([xmin, xmax])
 plt.show()
