@@ -25,7 +25,7 @@ tau = 5
 taup = 7
 expin = (1/tau) * np.exp(-t/tau) * echelon
 expc = (1/taup) * np.exp(-t/taup) * echelon
-expc_m = (1/(tau-taup)) * (np.exp(-t/tau) - np.exp(-t/taup)) * echelon
+convolution_manuelle = (1/(tau-taup)) * (np.exp(-t/tau) - np.exp(-t/taup)) * echelon
 ####
 
 f1 = expin
