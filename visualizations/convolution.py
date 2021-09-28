@@ -13,8 +13,8 @@ T = t[1] - t[0] # sampling width
 f1 = np.where(np.logical_and(t >= -T1/2, t <= T1/2), 1, 0)
 f2 = np.where(np.logical_and(t >= -T2/2, t <= T2/2), 1, 0)
 
-tc = np.linspace(xmin, xmax, 2*n-1)
-conv = np.convolve(f1, f2, mode='full') * T # *T to scale the convolution
+tc = np.linspace(xmin, xmax, n)
+conv = np.convolve(f1, f2, mode='same') * T # *T to scale the convolution
 
 fig, axis = plt.subplots(1, 1)
 axis.plot(t, f1, label=r'$f_1(t)$')# = \Pi(\frac{t}{T_1})$')
