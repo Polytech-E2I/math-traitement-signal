@@ -5,13 +5,21 @@ T1 = 8
 T2 = 2
 
 n = 1000
-xmin = -5
+xmin = -200
 xmax = -xmin
 t = np.linspace(xmin, xmax, n)
 T = t[1] - t[0] # sampling width
 
-f1 = np.where(np.logical_and(t >= -T1/2, t <= T1/2), 1, 0)
-f2 = np.where(np.logical_and(t >= -T2/2, t <= T2/2), 1, 0)
+rect1 = np.where(np.logical_and(t >= -T1/2, t <= T1/2), 1, 0)
+rect2 = np.where(np.logical_and(t >= -T2/2, t <= T2/2), 1, 0)
+
+Tsin = np.where(np.logical_and(t >= -70, t <= 70), 10, 20)
+sinus = np.sin((2*np.pi/Tsin) * t)
+theta = 10
+rectsinus = (1/theta) * np.where(np.logical_and(t >= -theta/2, t <= theta/2), 1, 0)
+
+f1 = sinus
+f2 = rectsinus
 
 tc = np.linspace(xmin, xmax, n)
 conv = np.convolve(f1, f2, mode='same') * T # *T to scale the convolution
