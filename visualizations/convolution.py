@@ -16,7 +16,7 @@ echelon = np.where(t >= 0, 1, 0)
 rect1 = np.where(np.logical_and(t >= -T1/2, t <= T1/2), 1, 0)
 rect2 = np.where(np.logical_and(t >= -T2/2, t <= T2/2), 1, 0)
 ####
-Tsin = np.where(np.logical_and(t >= -70, t <= 70), 10, 20)
+Tsin = np.where(np.logical_and(t >= -80, t <= 80), 10, 20)
 sinus = np.sin((2*np.pi/Tsin) * t)
 theta = 10
 rectsinus = (1/theta) * np.where(np.logical_and(t >= -theta/2, t <= theta/2), 1, 0)
