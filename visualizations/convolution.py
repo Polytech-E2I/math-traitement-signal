@@ -21,13 +21,12 @@ rectsinus = (1/theta) * np.where(np.logical_and(t >= -theta/2, t <= theta/2), 1,
 f1 = sinus
 f2 = rectsinus
 
-tc = np.linspace(xmin, xmax, n)
 conv = np.convolve(f1, f2, mode='same') * T # *T to scale the convolution
 
 fig, axis = plt.subplots(1, 1)
 axis.plot(t, f1, label=r'$f_1(t)$')# = \Pi(\frac{t}{T_1})$')
 axis.plot(t, f2, label=r'$f_2(t)$')# = \Pi(\frac{t}{T_2})$')
-axis.plot(tc, conv, label=r'$f_1(t) * f_2(t)$')
+axis.plot(t, conv, label=r'$f_1(t) * f_2(t)$')
 axis.legend(loc="best")
 axis.grid(True)
 
