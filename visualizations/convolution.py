@@ -59,5 +59,5 @@ convolution_manuelle = (1/(tau-taup)) * (np.exp(-t/tau) - np.exp(-t/taup)) * ech
 ####
 
 plot_convolve(t, rect1, rect2, -10, 10)
-plot_convolve(t, sinus, rectsinus, -200, 200)
-plot_convolve(t, expin, expc)
+#plot_convolve(t, sinus, rectsinus, -200, 200)
+#plot_convolve(t, expin, expc)
